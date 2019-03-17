@@ -1,0 +1,68 @@
+page-viewproducts {
+    ion-grid
+    {
+      min-height: 100% !important;
+
+    .login-logo
+      {
+        background-color: transparent;
+        display: block;
+        margin: auto;
+        height: 80%;
+        width: 100%;
+      }
+
+      .my-label {
+        font-size: 10px;
+      }
+
+      .user-label {
+        font-size: 10px;
+        text-decoration-color: #fff;
+      }
+      .myCard{
+        position: relative;
+        width: 50%;
+        height: 50%;
+      }
+      .myOverlay{
+        width: 80%;
+        height: 30%;
+        position: absolute;
+        z-index: 99;
+        bottom: 35px;
+        //opacity: 0.5;
+        background: #aaa;
+        color: #fff;
+      }
+
+      .imgclass {
+        cursor: pointer;
+      }
+      .myimg{
+        width: 10rem;
+        height: 6rem;
+      }
+
+      .bg-style {
+        background-color: grey;
+
+      }
+
+      ion-button {
+
+        //font-size: small;
+      }
+
+      ion-card{
+        display: flex;
+        flex-direction: column;
+        width: 80% !important;
+        height: 60% !important;
+        margin: 0 !important;
+        border-top: 2px solid #000;
+      }
+  }
+}
+
+

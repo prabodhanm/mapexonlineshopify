@@ -1,0 +1,34 @@
+<!--
+  Generated template for the DetailcartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="danger">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Detail Cart
+      </ion-title>
+
+
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <div class="login-logo">
+      <ion-thumbnail>
+          <img src={{prod.attrs.images[0].src}}>
+      </ion-thumbnail>
+
+        <div>
+            <ion-label class="my-label ion-padding-left" text-wrap>{{prod.attrs.description}}</ion-label>
+            <ion-label class="label-price">Price: {{prod.attrs.variants[0].price}}</ion-label>
+        </div>
+      </div>
+    <div class="ion-margin">
+      <button ion-button (click)="addtocart()" round small>Add to Cart</button>
+    </div>
+</ion-content>

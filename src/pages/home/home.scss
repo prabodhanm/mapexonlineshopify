@@ -1,3 +1,50 @@
 page-home {
+  ion-img {
+    width: 100%;
+    height: 75px;
+  }
 
+  ion-slide {
+    background-color: gray;
+    // background-color: transparent !important;
+  }
+
+  ion-slide img {
+    height: 25vh !important;
+    width: auto !important;
+    border: 5px solid color($colors, secondary);
+  }
+
+  .login-logo
+  {
+    background-color: transparent;
+    display: block;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+  }
+
+  ion-slides{
+    height: 30vh !important;
+  }
+
+  .slide-img{
+    object-fit: resize;
+    width: auto !important;
+    //height:50px;
+    border: 0;
+    padding: 0;
+    background-color: grey;
+  }
+  .image {
+    height:100%;
+    width: 80px;
+    border: 5px solid #fff;
+    // border-radius: 80%;
+    //box-shadow: 0 0 25px gray;
+    //display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+

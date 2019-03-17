@@ -1,14 +1,35 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
+    <ion-label class="user-label" right>Login as:</ion-label>
+    <ion-label class="user-label" right>{{this.loginuser}}</ion-label>
+
+    <ion-buttons *ngIf="loginuser" end>
+      <button ion-button icon-only (click)="logout()">
+          <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+    <ion-item>
+        <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyaoS9_r_P2KN1OhJRZGF883fdYw8DfCcTumhLNbK3vdF4ZZJT7w"></ion-img>
+    </ion-item>
+      <ion-item no-lines ion-padding-top>
+          <ion-slides *ngIf="this.products && this.products.length"
+          autoplay="5000" loop="true" speed="500" pager="true">
+            <ion-slide *ngFor= "let d of this.products">
+              <img src={{d.images[0].src}} tappable>
+                  <!-- <ion-img src={{d.images[0].src}} tappable> -->
+            </ion-slide>
+          </ion-slides>
+      </ion-item>
 </ion-content>
+
+<!-- [effect]="'converflow'" -->
