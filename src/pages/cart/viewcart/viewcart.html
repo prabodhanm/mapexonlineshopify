@@ -11,13 +11,13 @@
 </ion-header> -->
 
 <ion-header>
-  <ion-navbar color="danger">
+  <ion-navbar color="green">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
 
-    <ion-label class="user-label" right>Login as:</ion-label>
-    <ion-label class="user-label" right>{{this.loginuser}}</ion-label>
+    <ion-label class="userlabel" right>Login as:{{this.loginuser}}</ion-label>
+    <!-- <ion-label class="userlabel" right></ion-label> -->
 
     <ion-buttons *ngIf="loginuser" end>
       <button ion-button icon-only (click)="logout()">
@@ -25,6 +25,11 @@
       </button>
     </ion-buttons>
 
+    <ion-buttons end>
+        <button ion-button icon-only (click)="showorders()">
+          <img src="../../../assets/icon/productorder.png" class="image">
+        </button>
+    </ion-buttons>
   </ion-navbar>
 
 
@@ -32,6 +37,9 @@
 
 
 <ion-content>
+    <ion-item no-lines>
+        <ion-img src="./assets/img/mapexslogo_360x.jpg"></ion-img>
+    </ion-item>
     <ion-grid>
         <ion-row>
           <ion-col></ion-col>

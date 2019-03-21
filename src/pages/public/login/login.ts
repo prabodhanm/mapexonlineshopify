@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, Nav, NavController, NavParams } from 'ionic-angular';
 // import { ManagecustomersProvider } from '../providers/managecustomers/managecustomers';
 import { ManagecustomersProvider } from '../../../providers/managecustomers/managecustomers';
 import { Storage } from '@ionic/storage';
 import {ViewcartPage} from '../../cart/viewcart/viewcart';
+import {ViewproductsPage} from '../../products/viewproducts/viewproducts';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,11 +19,11 @@ import {ViewcartPage} from '../../cart/viewcart/viewcart';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  @ViewChild('content') nav :Nav;
   username : string;
   password: string;
   email : string;
-
+  lastpagevisited : string;
   customers: any;
   constructor(public navCtrl: NavController,
     public navParams: NavParams, private managecustomers : ManagecustomersProvider,
@@ -33,6 +34,7 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+
     this.managecustomers.getCustomers()
       .subscribe((result : any) => {
         // this.customers = result;
@@ -67,7 +69,20 @@ export class LoginPage {
         console.log('Phone number in login - ', customer.default_address.phone);
         this.storage.set("province",customer.default_address.province_code);
         this.storage.set("zip",customer.default_address.zip);
-        this.navCtrl.push(ViewcartPage);
+        // console.log(this.)
+        this.storage.get('lastpagevisited').then((val : string) => {
+          this.lastpagevisited = val;
+          console.log('Last Page Visited ' ,this.lastpagevisited);
+        })
+        if(this.lastpagevisited == null){
+          this.navCtrl.setRoot(ViewproductsPage);
+          //this.nav.setRoot(ViewproductsPage);
+        }
+        else {
+          this.navCtrl.setRoot(ViewcartPage);
+          // this.nav.setRoot(ViewcartPage);
+        }
+
       }
     }
 

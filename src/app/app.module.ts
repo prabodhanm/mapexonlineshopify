@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ViewproductsPage } from '../pages/products/viewproducts/viewproducts';
 import { OrdersPage } from '../pages/orders/orders'
 import { LoginPage } from '../pages/public/login/login';
+import { AboutUsPage } from '../pages/about-us/about-us';
 import { ViewcartPage } from '../pages/cart/viewcart/viewcart';
 import { DetailcartPage } from '../pages/cart/detailcart/detailcart';
 import { ManagecustomersProvider } from '../providers/managecustomers/managecustomers';
@@ -18,6 +19,8 @@ import { ManageproductsProvider } from '../providers/manageproducts/manageproduc
 import { IonicStorageModule } from '@ionic/storage';
 import { CartserviceProvider } from '../providers/cartservice/cartservice';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { File } from '@ionic-native/file';
+import {GlobalProvider} from '../providers/global/global';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     HomePage,
     ViewproductsPage,
     OrdersPage,
-    LoginPage, ViewcartPage,DetailcartPage
+    LoginPage, ViewcartPage,
+    DetailcartPage, AboutUsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     MyApp,
     HomePage,ViewproductsPage,
     OrdersPage,LoginPage,
-    ViewcartPage,DetailcartPage
+    ViewcartPage,DetailcartPage, AboutUsPage
 
   ],
   providers: [
@@ -48,7 +52,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     ManagecustomersProvider, HttpClient,
     ManageproductsProvider,
     CartserviceProvider,
-    InAppBrowser
+    InAppBrowser ,GlobalProvider
   ]
 })
 export class AppModule {}

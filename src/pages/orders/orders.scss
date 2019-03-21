@@ -4,10 +4,17 @@ page-orders {
   // }
   .headerlabel {
     font-size: 12px;
+    width: 100% !important;
   }
   .datalabel {
     font-size: 10px;
   }
+  .home-page {
+    ion-row[height-50] {
+       height: 50%;
+       position: relative;
+    }
+ }
   // .scroll-content {
   //   overflow-y: auto !important;
   // }

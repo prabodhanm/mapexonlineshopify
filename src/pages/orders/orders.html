@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="danger">
+    <ion-navbar color="green">
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -24,25 +24,38 @@
     </ion-navbar>
   </ion-header>
 
-<ion-content ion-padding-top>
+<ion-content has-bouncing="false">
+    <!-- <ion-infinite-scroll threshold="100px">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+        <ion-item class="headerlabel">
+            <ion-label>Order#</ion-label>
+            <ion-label>Date</ion-label>
+            <ion-label>Customer</ion-label>
+            <ion-label>Payment Status</ion-label>
+            <ion-label>Total</ion-label>
+          </ion-item>
+      </ion-infinite-scroll> -->
   <ion-list>
-    <ion-scroll  scrollX="true" style="white-space: nowrap; width: 100%; height: 300px;">
-        <ion-item primary nowrap>
-            <ion-label style="width:80px;">Order#</ion-label>
-            <ion-label style="width:80px;">Date</ion-label>
-            <ion-label style="width:80px;">Customer</ion-label>
-            <ion-label style="width:80px;">Payment Status</ion-label>
+    <!-- <ion-scroll  scrollX="true" style="white-space: nowrap; width: 100%; height: 300px;"> -->
+          <ion-item class="headerlabel">
+            <ion-label>Order#</ion-label>
+            <ion-label>Date</ion-label>
+            <ion-label>Customer</ion-label>
+            <ion-label>Payment Status</ion-label>
             <!-- <ion-label>Total</ion-label>  -->
           </ion-item>
 
-          <ion-item primary nowrap *ngFor="let order of this.filterorders">
+          <ion-item *ngFor="let order of this.filterorders" class="headerlabel">
               <ion-label>{{order.orderno}}</ion-label>
               <ion-label>{{order.date}}</ion-label>
-              <ion-label>{{order.customer}}</ion-label>
+              <ion-label style="width:100px;">{{order.customer}}</ion-label>
               <ion-label>{{order.paymentstatus}}</ion-label>
               <!-- <ion-label>{{order.total}}</ion-label>  -->
           </ion-item>
-    </ion-scroll>
+    <!-- </ion-scroll> -->
 
   </ion-list>
 </ion-content>

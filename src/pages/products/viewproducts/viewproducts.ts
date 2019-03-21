@@ -6,7 +6,7 @@ import { ViewcartPage } from '../../cart/viewcart/viewcart'
 import { DetailcartPage } from '../../cart/detailcart/detailcart';
 import { Storage } from '@ionic/storage';
 import Client from 'shopify-buy';
-
+import { OrdersPage } from '../../orders/orders';
 /**
  * Generated class for the ViewproductsPage page.
  *
@@ -27,6 +27,7 @@ export class ViewproductsPage {
   client : any;
   prodcheckout : any;
   loginuser : string;
+  // lastpagevisited : string;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -56,6 +57,9 @@ export class ViewproductsPage {
     this.cart = this.cartservice.getcart();
   }
 
+  showorders() {
+    this.navCtrl.push(OrdersPage);
+  }
   logout() {
     this.storage.set("email","");
   }

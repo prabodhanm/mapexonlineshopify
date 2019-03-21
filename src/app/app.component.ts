@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Nav, MenuController  } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { ViewproductsPage } from '../pages/products/viewproducts/viewproducts';
+import { AboutUsPage } from '../pages/about-us/about-us';
 import { OrdersPage } from '../pages/orders/orders'
 import { LoginPage } from '../pages/public/login/login';
 
@@ -46,7 +47,8 @@ export class MyApp {
         component:ViewproductsPage,
         url:'home'
       },
-      {title:'Orders',component:OrdersPage, url:'home'},
+      {title:'About Us',component:AboutUsPage, url:'home'},
+      // {title:'Orders',component:OrdersPage, url:'home'},
       {title:'Login',component:LoginPage, url:'log-in'}
     ]
   }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, Nav, NavController, NavParams } from 'ionic-angular';
 import Client from 'shopify-buy';
 import { Storage } from '@ionic/storage';
 import { ViewproductsPage } from '../../../pages/products/viewproducts/viewproducts';
@@ -18,7 +18,7 @@ import { CartserviceProvider } from '../../../providers/cartservice/cartservice'
   templateUrl: 'detailcart.html',
 })
 export class DetailcartPage {
-
+  @ViewChild('content') nav :Nav;
   prod : any;
   checkoutid : string;
   prodcheckout: any;
@@ -44,7 +44,8 @@ export class DetailcartPage {
   }
 
   openviewproduct() {
-    this.navCtrl.push(ViewproductsPage);
+    // this.navCtrl.push(ViewproductsPage);
+    this.nav.setRoot(ViewproductsPage);
   }
 
   addtocart(){
@@ -86,7 +87,9 @@ export class DetailcartPage {
           this.client.checkout.addLineItems(checkout.attrs.id.value, lineItemsToAdd).then((checkout) => {
             // Do something with the updated checkout
             // console.log(checkout.lineItems); // Array with one additional line item
-            this.navCtrl.push(ViewproductsPage);
+            // this.navCtrl.push(ViewproductsPage);
+            //this.nav.setRoot(ViewproductsPage);
+            this.navCtrl.setRoot(ViewproductsPage);
           });
         });
       })
@@ -109,7 +112,8 @@ export class DetailcartPage {
         this.client.checkout.addLineItems(this.checkoutid, lineItemsToAdd).then((checkout) => {
           // Do something with the updated checkout
           // console.log(checkout.lineItems); // Array with one additional line item
-          this.navCtrl.push(ViewproductsPage);
+          // this.navCtrl.push(ViewproductsPage);
+          this.navCtrl.setRoot(ViewproductsPage);
         });
       });
     }

@@ -1,6 +1,6 @@
 <ion-menu type="overlay" [content]="content">
   <ion-header>
-    <ion-toolbar color="primary">
+    <ion-toolbar color="green">
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -41,6 +41,7 @@
   </ion-content>  -->
 
   <ion-content>
+    <ion-searchbar></ion-searchbar>
       <ion-list color="secondary">
         <ion-item *ngFor="let p of pages; let i=index" text-wrap (click)="toggleLevel1(p,'idx'+i, i)"
         [ngClass]="{active: isLevel1Shown('idx'+i)}" class="mnuclass">

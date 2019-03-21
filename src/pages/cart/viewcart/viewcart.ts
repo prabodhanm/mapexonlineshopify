@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CartserviceProvider } from '../../../providers/cartservice/cartservice';
 import { ManagecustomersProvider } from '../../../providers/managecustomers/managecustomers';
 import {LoginPage} from '../../public/login/login';
+import { OrdersPage } from '../../orders/orders';
 import { Storage } from '@ionic/storage';
 import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser/ngx';
 import Client from 'shopify-buy';
@@ -25,8 +26,8 @@ export class ViewcartPage {
   // client : any;
   // totalAmt : number;
 
-  cart  = [];
-  newcart  = [];
+  cart : any = [];
+  newcart  : any = [];
   totalAmt: number = 0;
   client : any;
   singleproduct : any;
@@ -80,14 +81,21 @@ export class ViewcartPage {
     //console.log('Email in ionViewWillEnter is ', this.storage.get("email").then(val => {}));
     this.storage.get("email").then((val : string)=>{
       console.log('Email in ionViewWillEnter is ', val);
+      this.loginuser = val;
     });
-    this.showlineitems();
+    // if(this.cart.length > 0) {
+      this.showlineitems();
+    // }
+
   }
 
   logout() {
     this.storage.set("email","");
   }
 
+  showorders() {
+    this.navCtrl.push(OrdersPage);
+  }
   showlineitems(){
     //this.checkoutid = this.cartservice.getcheckoutid();
     this.storage.get('checkoutid')
