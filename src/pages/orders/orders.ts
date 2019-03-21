@@ -53,17 +53,21 @@ export class OrdersPage {
         if(order.email == this.loginuser){
 
 
-          this.orderitem = {"orderno": order.name,
-          "date" : order.created_at,
-          "customer" : order.billing_address.name,
-          "paymentstatus" : order.financial_status,
-          "total" : order.total_price
+          this.orderitem =
+          {
+            "orderno": order.name,
+            "date" : order.created_at.substring(0,10),
+            "customer" : order.billing_address.name,
+            "paymentstatus" : order.financial_status,
+            "total" : order.total_price
           };
 
           this.filterorders.push(this.orderitem);
           this.orderitem = {};
         }
       }
+
+
 
       console.log('Filter orders ', this.filterorders);
     })

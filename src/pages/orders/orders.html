@@ -24,38 +24,48 @@
     </ion-navbar>
   </ion-header>
 
-<ion-content has-bouncing="false">
-    <!-- <ion-infinite-scroll threshold="100px">
-        <ion-infinite-scroll-content
-          loadingSpinner="bubbles"
-          loadingText="Loading more data...">
-        </ion-infinite-scroll-content>
-        <ion-item class="headerlabel">
-            <ion-label>Order#</ion-label>
-            <ion-label>Date</ion-label>
-            <ion-label>Customer</ion-label>
-            <ion-label>Payment Status</ion-label>
-            <ion-label>Total</ion-label>
-          </ion-item>
-      </ion-infinite-scroll> -->
-  <ion-list>
-    <!-- <ion-scroll  scrollX="true" style="white-space: nowrap; width: 100%; height: 300px;"> -->
-          <ion-item class="headerlabel">
-            <ion-label>Order#</ion-label>
-            <ion-label>Date</ion-label>
-            <ion-label>Customer</ion-label>
-            <ion-label>Payment Status</ion-label>
-            <!-- <ion-label>Total</ion-label>  -->
-          </ion-item>
+  <ion-content>
+    <ion-scroll scrollX="true" style="white-space:nowrap; height:300px;">
+      <ion-grid>
+        <ion-row nowrap>
+            <ion-col style="width:150px;">Order#</ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col style="width:100px;">Date</ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col style="width:100px;">Customer</ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
 
-          <ion-item *ngFor="let order of this.filterorders" class="headerlabel">
-              <ion-label>{{order.orderno}}</ion-label>
-              <ion-label>{{order.date}}</ion-label>
-              <ion-label style="width:100px;">{{order.customer}}</ion-label>
-              <ion-label>{{order.paymentstatus}}</ion-label>
-              <!-- <ion-label>{{order.total}}</ion-label>  -->
-          </ion-item>
-    <!-- </ion-scroll> -->
 
-  </ion-list>
-</ion-content>
+            <ion-col style="width:100px;">Payment Status</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let order of this.filterorders" nowrap class="forecast_container">
+            <ion-col style="width:100px;">{{order.orderno}}</ion-col>
+            <ion-col style="width:100px;">{{order.date}}</ion-col>
+            <ion-col style="width:100px;">{{order.customer}}</ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col style="width:100px;">{{order.paymentstatus}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-scroll>
+  </ion-content>
+
+
+
+
+
+
